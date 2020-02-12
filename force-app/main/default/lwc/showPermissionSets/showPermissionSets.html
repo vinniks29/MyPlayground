@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Permission Sets" icon-name="custom:custom63">
+
+        <template if:true={permsets}>
+            <template for:each={permsets} for:item="perm">
+                <p key={perm.Id}>{perm.Label}</p>
+            </template>
+            <br>
+
+            <lightning-combobox name="PermissionSet" label = "Permission Sets" value={selectedValue} placeholder="Select Value" options={permsOptions} onchange={handleChange}></lightning-combobox>
+            
+            <p>Selected Value: {selectedValue}</p>
+
+        </template>
+    </lightning-card>
+
+</template>
